@@ -1,22 +1,68 @@
 
-html, body {
-    font-family: Arial, Helvetica, sans-serif;
+:root.light {
+    color-scheme: light;
+    --main-bg-color: rgb(250, 250, 250);
+    --main-text-color: rgb(30, 30, 30);
+    --link-text-color: rgb(44, 44, 44);
+}
+
+:root.dark {
+    color-scheme: dark;
+    --main-bg-color: rgb(25, 25, 25);
+    --main-text-color: white;
+    --link-text-color: white;
+}
+
+html {
     height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: var(--main-text-color);
+}
+
+body {
     margin: 0;
+    height: 100%;
+    background-color: var(--main-bg-color);
 }
 
 h1 {
     font-size: 64px;
 }
 
+h2 {
+    font-size: 36px;
+}
+
 #nav {
     position: fixed;
     width: 100%;
+    padding: 20px;
     border-bottom: 1px solid lightgray;
+}
+
+#nav ul {
+    display: inline;
+    padding: 0;
 }
 
 #nav ul li {
     display: inline;
+    padding: 0 20px;
+}
+
+#nav ul li a {
+    font-size: 20px;
+    color: var(--link-text-color);
+    text-decoration: none;
+}
+
+#nav ul li a:hover {
+    text-decoration: underline solid cornflowerblue 5px;
+}
+
+.spacer {
+    height: 60px;
 }
 
 #top-container {
@@ -55,4 +101,27 @@ h1 {
     background-color: white;
     border: 1px solid cornflowerblue;
     border-radius: 10px;
+}
+
+.table {
+    display: table;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    padding: 15px 30px;
+}
+
+.response-yes {
+    color: rgb(66, 195, 76);
+    font-weight: 900;
+}
+
+.response-no {
+    color: rgb(218, 53, 53);
+    font-weight: 900;
 }
