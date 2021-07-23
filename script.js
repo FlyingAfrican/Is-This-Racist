@@ -9,36 +9,40 @@ function isRacist(value) {
 }
 
 window.onload = function() {
-    // let el_input = document.getElementById('input-textbox');
-    // let el_result = document.getElementById('result');
-    // document.getElementById('input-textbox').onkeyup = function() {
-    //     if (el_input.value === '') {
-    //         el_result.innerHTML = '...';
-    //         el_result.style.color = '#000000';
-    //     }
-    //     else {
-    //         if (isRacist(el_input.value)) {
-    //             el_result.innerHTML = 'Yes';
-    //             el_result.style.color = 'limegreen';
-    //         }
-    //         else {
-    //             el_result.innerHTML = 'No';
-    //             el_result.style.color = 'red';
-    //         }
-    //     }
-    // }
-    document.getElementById('theme-check').onchange = function(event) {
-        if (event.target.checked) {
-            setTheme('dark');
-            document.getElementById('site-racist-response').innerHTML = 'No';
-            document.getElementById('site-racist-response').className = 'response-no';
-            document.getElementById('site-racist-explanation').innerHTML = 'This site is not racist since it has a dark theme.';
+    if (document.getElementById('input-textbox')) {
+        let el_input = document.getElementById('input-textbox');
+        let el_result = document.getElementById('result');
+        document.getElementById('input-textbox').onkeyup = function() {
+            if (el_input.value === '') {
+                el_result.innerHTML = '...';
+                el_result.style.color = 'inherit';
+            }
+            else {
+                if (isRacist(el_input.value)) {
+                    el_result.innerHTML = 'Yes';
+                    el_result.style.color = 'limegreen';
+                }
+                else {
+                    el_result.innerHTML = 'No';
+                    el_result.style.color = 'red';
+                }
+            }
         }
-        else {
-            setTheme('light');
-            document.getElementById('site-racist-response').innerHTML = 'Yes';
-            document.getElementById('site-racist-response').className = 'response-yes';
-            document.getElementById('site-racist-explanation').innerHTML = 'This site is extremely racist<br>becuase it has a light theme.';
+    }
+    if (document.getElementById('theme-check')) {
+        document.getElementById('theme-check').onchange = function(event) {
+            if (event.target.checked) {
+                setTheme('dark');
+                document.getElementById('site-racist-response').innerHTML = 'No';
+                document.getElementById('site-racist-response').className = 'response-no';
+                document.getElementById('site-racist-explanation').innerHTML = 'This site is not racist since it has a dark theme.';
+            }
+            else {
+                setTheme('light');
+                document.getElementById('site-racist-response').innerHTML = 'Yes';
+                document.getElementById('site-racist-response').className = 'response-yes';
+                document.getElementById('site-racist-explanation').innerHTML = 'This site is extremely racist<br>becuase it has a light theme.';
+            }
         }
     }
 }

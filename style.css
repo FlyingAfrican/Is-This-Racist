@@ -83,6 +83,7 @@ h2 {
 }
 
 #input-textbox {
+    background-color: var(--main-bg-color);
     padding: 5px 10px;
     font-size: 48px;
     text-align: center;
@@ -93,14 +94,6 @@ h2 {
 
 #input-textbox:focus {
     outline-width: 0;
-}
-
-#submit {
-    font-size: 36px;
-    padding: 15px 30px;
-    background-color: white;
-    border: 1px solid cornflowerblue;
-    border-radius: 10px;
 }
 
 .table {
